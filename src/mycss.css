@@ -1,0 +1,8 @@
+table
+{
+    color: skyblue;
+    background-color: beige;
+    border: 5px;
+    border-style: dotted;
+    box-shadow: 20px 50px 100px red;
+}
