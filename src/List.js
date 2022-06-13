@@ -24,7 +24,7 @@ export const List=()=>{
             <button className="btn btn-outline-secondary" onClick={()=>{
                 setCview(false)
             }}>
-                <i class="bi bi-skip-backward-circle-fill"></i>
+                    <i class="bi bi-skip-backward-circle-fill"></i>
             </button>
         </>
         :
