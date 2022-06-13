@@ -23,6 +23,7 @@ export const List=()=>{
             <Create/>
             <button className="btn btn-outline-secondary" onClick={()=>{
                 setCview(false)
+                window.location.assign("/")
             }}>
                     <i class="bi bi-skip-backward-circle-fill"></i>
             </button>

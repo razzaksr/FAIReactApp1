@@ -25,10 +25,13 @@ const loading=()=>{
     records=JSON.parse(tmp)
 }
 
+export const executeCreating=(obj)=>{
+    loading()
+    records.push(obj)
+    affect()
+}
+
 export const executeListing=()=>{
     loading()
-
-    //alert(records.length)
-
     return records
 }
