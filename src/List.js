@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Create } from "./Create"
+import { Read } from "./Read"
 import { executeListing } from "./Storage"
 //import { affect, executeListing, loading } from "./Storage"
 // import {loading} from './Storage'
@@ -9,6 +10,9 @@ export const List=()=>{
     const[tmpArr,setTmpArr]=useState([])
 
     const[cview,setCview]=useState(false)
+    const[rview,setRview]=useState(false)
+
+    const[specific,setSpecific]=useState(0)
 
     useEffect(()=>{
         //affect()
@@ -23,6 +27,17 @@ export const List=()=>{
             <Create/>
             <button className="btn btn-outline-secondary" onClick={()=>{
                 setCview(false)
+                window.location.assign("/")
+            }}>
+                    <i class="bi bi-skip-backward-circle-fill"></i>
+            </button>
+        </>
+        :
+        (rview)?
+        <>
+            <Read which={specific}/>
+            <button className="btn btn-outline-secondary" onClick={()=>{
+                setRview(false)
                 window.location.assign("/")
             }}>
                     <i class="bi bi-skip-backward-circle-fill"></i>
@@ -50,6 +65,14 @@ export const List=()=>{
                                 <td>{ele.id}</td>
                                 <td>{ele.name}</td>
                                 <td>{ele.issue}</td>
+                                <td>
+                                    <button className="btn btn-outline-warning col-4" onClick={()=>{
+                                        setRview(true)
+                                        setSpecific(ele.id)
+                                    }}>
+                                        <i class="bi bi-book-half"></i>
+                                    </button>
+                                </td>
                             </tr>
                         ))} 
                     </tbody>
