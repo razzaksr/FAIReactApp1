@@ -25,6 +25,28 @@ const loading=()=>{
     records=JSON.parse(tmp)
 }
 
+export const executeDeleting=(unique)=>{
+    loading()
+    records=records.filter((ele,ind)=>{
+        return ele.id!==unique
+    })
+    affect()
+    alert(unique+" has been terminated")
+}
+
+export const executeUpdating=(obj)=>{
+    loading()
+    for(var ind=0;ind<records.length;ind++)
+    {
+        if(records[ind].id===obj.id){
+            records[ind]=obj
+            affect()
+            return;
+        }
+    }
+    alert("Invalid id")
+}
+
 export const executeReading=(key)=>{
     loading()
     for(var ind=0;ind<records.length;ind++)
