@@ -64,6 +64,6 @@ export const executeCreating=(obj)=>{
 }
 
 export const executeListing=()=>{
-    loading()
+    //loading()
     return records
 }
